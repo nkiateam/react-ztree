@@ -50,6 +50,7 @@ module: {
      * If a gif file error is found...
      * 1. npm install --save-dev file-loader
      * 2. webpack
+     */
     module: {
        rules: [
            {
