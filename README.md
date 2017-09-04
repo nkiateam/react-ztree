@@ -11,11 +11,11 @@ npm install react-ztree --save-dev
 ```
 
 ## Build
-npm run Build
+- npm run Build
 
 ## Demo
-npm run examples
-http://localhost:4000/examples/
+- npm run examples
+- http://localhost:4000/examples/
 
 ## Configuration webpack
 
