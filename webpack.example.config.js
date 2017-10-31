@@ -7,7 +7,8 @@ module.exports = {
     ],
     output: {
         publicPath: "/",
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        path: __dirname + '/examples/build'
     },
 
     devServer: {
@@ -18,6 +19,7 @@ module.exports = {
         historyApiFallback: {
             index: 'index.html'
         },
+        publicPath: "/build/",
         contentBase: path.join(__dirname, './examples')
     },
 
