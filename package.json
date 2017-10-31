@@ -2,7 +2,7 @@
   "name": "react-ztree",
   "version": "1.0.3",
   "description": "",
-  "main": "./lib/react-ztree.js",
+  "main": "./lib/index.js",
   "scripts": {
     "prepublish": "babel ./src -d lib --copy-files",
     "build": "babel ./src -d lib --copy-files",

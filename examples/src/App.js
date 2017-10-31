@@ -5,8 +5,11 @@ import {
     BrowserRouter,
     Link
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import createStore from './store/configureStore';
 import routes from './routes';
 const { Content, Footer, Sider } = Layout;
+const store = createStore;
 
 class App extends Component {
 
@@ -27,11 +30,50 @@ class App extends Component {
             <Sider style={{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }}>
                 <div className="logo" />
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={[createMenuKeyByPathname()]}>
-
                     {/* Sample Menu */}
-                    <Menu.Item key="grid">
-                        <Link to="/grid">
-                            <span className="nav-text">Sample</span>
+                    <Menu.Item key="basic">
+                        <Link to="/basic">
+                            <span className="nav-text">기본 Tree</span>
+                        </Link>
+                    </Menu.Item>
+                    <Menu.Item key="checkbox">
+                        <Link to="/checkbox">
+                            <span className="nav-text">체크박스 Tree</span>
+                        </Link>
+                    </Menu.Item>
+                    <Menu.Item key="icon">
+                        <Link to="/icon">
+                            <span className="nav-text">아이콘 Tree</span>
+                        </Link>
+                    </Menu.Item>
+                    <Menu.Item key="ajaxurl">
+                        <Link to="/ajaxurl">
+                            <span className="nav-text">Ajax Tree - URL</span>
+                        </Link>
+                    </Menu.Item>
+                    <Menu.Item key="ajaxload">
+                        <Link to="/ajaxload">
+                            <span className="nav-text">Ajax Tree - Load</span>
+                        </Link>
+                    </Menu.Item>
+                    <Menu.Item key="ajaxredux">
+                        <Link to="/ajaxredux">
+                            <span className="nav-text">Ajax Tree - Redux</span>
+                        </Link>
+                    </Menu.Item>
+                    <Menu.Item key="expandnodelevel">
+                        <Link to="/expandnodelevel">
+                            <span className="nav-text">레벨(Depth) 노드 확장 Tree</span>
+                        </Link>
+                    </Menu.Item>
+                    <Menu.Item key="expcol">
+                        <Link to="/expcol">
+                            <span className="nav-text">전체 확장/접기</span>
+                        </Link>
+                    </Menu.Item>
+                    <Menu.Item key="state">
+                        <Link to="/state">
+                            <span className="nav-text">State - 최종 선택 유지(미구현)</span>
                         </Link>
                     </Menu.Item>
                 </Menu>
@@ -61,15 +103,18 @@ class App extends Component {
 
     render() {
         return (
-            <BrowserRouter>
-                <Layout style={{ height: '100%' }}>
-                    {this._renderMenu()}
-                    <Layout style={{ marginLeft: 200 }}>
-                        {this._renderContents()}
-                        {this._renderFooter()}
+            <Provider store={store}>
+                <BrowserRouter>
+                    <Layout style={{ height: '100%' }}>
+                        {this._renderMenu()}
+                        <Layout style={{ marginLeft: 200 }}>
+                            {this._renderContents()}
+                            {this._renderFooter()}
+                        </Layout>
                     </Layout>
-                </Layout>
-            </BrowserRouter>
+                </BrowserRouter>
+            </Provider>
+
         );
     }
 }
