@@ -14,7 +14,7 @@ npm install react-ztree --save-dev
 - npm run Build
 
 ### Examples
-https://nkiateam.github.io/react-ztree/examples/
+https://nkiateam.github.io/react-ztree/examples/example.html
 
 ### Docs
 https://nkiateam.github.io/react-ztree/docs
