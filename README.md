@@ -13,9 +13,11 @@ npm install react-ztree --save-dev
 ## Build
 - npm run Build
 
-## Demo
-- npm run examples
-- http://localhost:4000/examples/
+### Examples
+https://nkiateam.github.io/react-ztree/examples/
+
+### Docs
+https://nkiateam.github.io/react-ztree/docs
 
 ## Configuration webpack
 
@@ -64,41 +66,4 @@ module: {
            }
        ],
     }
-```
-
-## Example
-
-```
-import React from 'react';
-import Ztree from 'react-ztree';
-
-class Examples extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        const data= [{
-            name: 'Nkia',
-            id:0,
-            children: [{
-              name: 'R&D',
-              id:1
-            },{
-              name: 'Sales',
-              id:2,
-              children:[{
-                name:'Global',
-                id:3
-              }]
-            }]
-          }];
-        return (
-            <div>
-                <Ztree treeId="tree" data={data}/>
-            </div>
-        );
-    }
-}
-
-export default Examples;
 ```
