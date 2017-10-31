@@ -4,8 +4,11 @@
   "description": "",
   "main": "./lib/react-ztree.js",
   "scripts": {
-    "build": "babel ./src -d lib",
-    "examples": "webpack-dev-server"
+    "prepublish": "babel ./src -d lib --copy-files",
+    "build": "babel ./src -d lib --copy-files",
+    "example": "webpack-dev-server --config webpack.example.config.js",
+    "doc": "styleguidist server",
+    "doc:build": "styleguidist build"
   },
   "dependencies": {
     "react": "^15.6.1",
@@ -17,6 +20,8 @@
     "loadash": "^1.0.0"
   },
   "devDependencies": {
+    "antd": "^2.13.7",
+    "axios": "^0.17.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.2.3",
@@ -26,16 +31,31 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
-    "eslint": "^4.2.0",
-    "eslint-plugin-babel": "^4.1.1",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.3.0",
+    "file-loader": "^1.1.5",
+    "font-awesome": "^4.7.0",
+    "react-dom-factories": "^1.0.2",
     "react-hot-loader": "^3.0.0-beta.7",
+    "react-qtip": "^1.0.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-styleguidist": "^6.0.31",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "webpack": "^3.5.5",
     "webpack-dev-server": "^2.7.1"
   },
   "keywords": [
     "React",
     "zTree"
+  ],
+  "files": [
+    "lib"
   ],
   "author": "NKIA",
   "license": "MIT"
