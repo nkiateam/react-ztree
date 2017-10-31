@@ -19,7 +19,6 @@ module.exports = {
         historyApiFallback: {
             index: 'index.html'
         },
-        publicPath: "/build/",
         contentBase: path.join(__dirname, './examples')
     },
 
